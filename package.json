@@ -1,0 +1,27 @@
+{
+  "name": "sisbabywear",
+  "version": "1.0.0",
+  "description": "MERN stack ecommerce web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YosepRA/SisBabywear.git"
+  },
+  "author": "Yosep Ryan Agusta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YosepRA/SisBabywear/issues"
+  },
+  "homepage": "https://github.com/YosepRA/SisBabywear#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "prettier": "^2.1.2"
+  }
+}
