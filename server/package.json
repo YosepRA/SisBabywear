@@ -11,6 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "mongoose-paginate": "^5.0.3"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "faker": "^5.1.0",
+    "morgan": "^1.10.0"
   }
 }
