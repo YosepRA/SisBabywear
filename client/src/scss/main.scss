@@ -1,0 +1,31 @@
+@import './config';
+
+body {
+  @include Inter();
+  color: $main-black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include Quicksand();
+}
+
+#root {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-container {
+  min-height: calc(100vh - 230px - 3rem);
+  margin-bottom: 3rem;
+}
+
+@import './navbar';
+
+@import './footer';
+
+@import './shop-index';

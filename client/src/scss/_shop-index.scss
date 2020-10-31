@@ -1,0 +1,115 @@
+.shop-index {
+  font-size: 0.8rem;
+
+  .search-result-message {
+    font-size: 0.8rem;
+
+    &__query {
+      font-weight: 700;
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $light-grey;
+
+    &__item {
+      display: block;
+      margin: 0 1rem 0 0;
+
+      &--sort {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &__label {
+      margin: 0 0.5rem 0 0;
+    }
+
+    &__input {
+      display: inline-block;
+      width: auto;
+      font-size: inherit;
+    }
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .product {
+    &__image {
+      @include flexCenter();
+      height: 300px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        max-height: 100%;
+      }
+    }
+
+    &__title {
+      color: $main-black;
+      font-size: 0.9rem;
+    }
+  }
+
+  .pagination {
+    justify-content: center;
+
+    .page {
+      &-item {
+        margin: 0 0.1rem;
+
+        &.disabled {
+          .page-link {
+            color: $light-grey;
+          }
+        }
+      }
+
+      &-link {
+        margin: 0;
+        padding: 0.5rem;
+        color: $main-black;
+        border: none;
+        border-radius: 5px;
+
+        &.active {
+          background-color: $main-color;
+        }
+
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+/* ======================================================================================================== */
+
+// Brekapoints.
+
+@include breakpoint-up(sm) {
+  .shop-index {
+    .controls {
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      &__item {
+        &--sort {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

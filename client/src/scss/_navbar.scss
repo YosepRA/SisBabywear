@@ -1,0 +1,218 @@
+.page-header {
+  .main-nav {
+    .container {
+      padding-left: 0;
+    }
+
+    &__brand {
+      @include Quicksand();
+      margin: 0;
+      font-size: 1.2rem;
+      color: $main-black;
+    }
+
+    &__control {
+      width: 50px;
+      padding: 0;
+      color: $light-grey;
+      text-align: center;
+      line-height: 1.2rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      @include buttonColorAnimation($main-black);
+
+      .btn-icon {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .btn-text {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+    }
+
+    &__main-control {
+      border: none;
+      background-color: transparent;
+    }
+
+    &__search,
+    &__cart {
+      &.active {
+        color: $main-black;
+      }
+    }
+
+    &__user-control {
+      &--mobile {
+        width: 100%;
+        padding: 0.4rem 0 0.4rem;
+        text-align: left;
+
+        .btn-icon {
+          display: inline-block;
+          margin-right: 0.3rem;
+          font-size: inherit;
+        }
+
+        .btn-text {
+          font-size: inherit;
+          text-transform: initial;
+        }
+      }
+
+      &--desktop {
+        display: none;
+      }
+    }
+
+    &__user-setting {
+      &--mobile {
+        .btn-icon {
+          display: inline;
+        }
+      }
+    }
+
+    &__link {
+      color: $light-grey;
+      font-size: 1rem;
+      padding: 0.4rem 0 0.4rem;
+
+      &.active {
+        color: $main-black;
+      }
+
+      @include buttonColorAnimation($medium-grey);
+    }
+
+    .dropdown-mobile {
+      .dropdown-menu {
+        background-color: transparent;
+        border-left: none;
+        border-right: none;
+      }
+
+      .dropdown-item {
+        color: $medium-grey;
+        font-size: 0.8rem;
+
+        @include buttonColorAnimation($main-black);
+      }
+    }
+
+    .dropdown-desktop {
+      display: none;
+    }
+
+    &__toggler {
+      border: none;
+      font-size: inherit;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+/* ======================================================================================================== */
+
+// Breakpoints.
+
+@include breakpoint-up(sm) {
+  .page-header {
+    .main-nav {
+      .container {
+        padding-left: 15px;
+      }
+
+      &__brand {
+        font-size: 1.5rem;
+      }
+
+      &__control {
+        margin: 0 0.2rem;
+        line-height: 1.4rem;
+
+        .btn-icon {
+          font-size: 1.2rem;
+        }
+
+        .btn-text {
+          font-size: 0.8rem;
+        }
+      }
+
+      &__user-control {
+        &--mobile {
+          .btn-text {
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-up(md) {
+  .page-header {
+    .main-nav {
+      &__container {
+        justify-content: space-between;
+      }
+
+      &__brand {
+        order: 1;
+      }
+
+      &__control {
+        width: 60px;
+        margin: 0;
+      }
+
+      &__controls {
+        order: 3;
+        @include flexCenter();
+        margin-left: 1.4rem;
+      }
+
+      &__menu {
+        flex: 1;
+        order: 2;
+        justify-content: flex-end;
+      }
+
+      &__link {
+        font-size: 0.9rem;
+      }
+
+      &__user-control {
+        &--mobile {
+          display: none;
+        }
+
+        &--desktop {
+          display: inline-block;
+        }
+      }
+
+      .dropdown-desktop {
+        display: block;
+
+        .dropdown {
+          &-menu {
+            font-size: 0.9rem;
+          }
+
+          &-item {
+            color: $medium-grey;
+
+            @include buttonColorAnimation($main-black);
+          }
+        }
+      }
+    }
+  }
+}

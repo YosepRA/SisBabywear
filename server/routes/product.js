@@ -40,4 +40,33 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// CREATE: New product.
+router.post('/', async (req, res) => {
+  try {
+    /* 
+      Received data structure from client:
+      {
+        name: "Caramel Blouse"
+        variations: [
+          {
+            id: 100,
+            size: 'S',
+            color: '#696c86',
+            stock: 99,
+            images: [
+              'http://placeimg.com/640/480/fashion',
+              'http://placeimg.com/640/480/fashion',
+              'http://placeimg.com/640/480/fashion',
+            ],
+            price: '37.00',
+          }
+        ]
+      }
+    */
+  } catch (err) {
+    console.err(err);
+    res.sendStatus(500);
+  }
+});
+
 module.exports = router;

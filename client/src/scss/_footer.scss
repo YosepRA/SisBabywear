@@ -1,0 +1,93 @@
+.page-footer {
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+
+  &__brand {
+    width: 80%;
+    margin: 0 auto 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid $light-grey;
+    @include Quicksand();
+    font-size: 1.6rem;
+    text-align: center;
+
+    &-link {
+      color: $main-black;
+
+      &:hover {
+        color: $main-black;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer-nav {
+    @include flexCenter();
+    margin-bottom: 1rem;
+  }
+
+  &__nav-link {
+    display: inline-block;
+    margin: 0 0.4rem;
+    color: $main-black;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    &:hover {
+      color: $main-black;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  &__social-media {
+    &__title {
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    &__list {
+      @include flexCenter();
+      flex-wrap: wrap;
+      padding: 0;
+
+      &-item {
+        @include flexCenter();
+        margin: 0 0.3rem;
+        list-style: none;
+      }
+    }
+
+    &__icon {
+      display: inline-block;
+      margin-right: 0.3rem;
+      font-size: 1.2rem;
+    }
+
+    &__username {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* ======================================================================================================== */
+
+// Breakpoints.
+
+@include breakpoint-up(md) {
+  .page-footer {
+    &__nav-link {
+      margin: 0 1.4rem;
+    }
+
+    &__social-media {
+      &__list {
+        &-item {
+          margin: 0 0.8rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+$main-color: #ddbea9;
+$main-black: #222;
+$light-grey: rgba($main-black, 0.5);
+$medium-grey: rgba($main-black, 0.7);
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Quicksand:wght@300&display=swap');
+
+@mixin Quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+@mixin Inter {
+  font-family: 'Inter', sans-serif;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin all200ms {
+  transition: all 200ms ease-out;
+}
+
+@mixin buttonColorAnimation($darken) {
+  @include all200ms();
+
+  &:hover {
+    color: $darken;
+  }
+}
+
+@mixin buttonBGAnimation($color, $bgColor) {
+  @include all200ms();
+
+  &:hover {
+    color: $color;
+    background-color: $bgColor;
+  }
+}
+
+@mixin mainButton {
+  background-color: $main-color;
+  color: white;
+
+  @include buttonBGAnimation(white, darken($main-color, 5));
+}
+
+// BREAKPOINTS
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+@mixin breakpoint-up($size) {
+  @if $size == sm {
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $size == md {
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == lg {
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $size == xl {
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
