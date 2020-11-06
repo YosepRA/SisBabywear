@@ -27,7 +27,7 @@ export class ShopSwitch extends Component {
             render={routeProps => <ProductDetails {...routeProps} />}
           />
 
-          <Route path="/shop/:page?">
+          <Route path="/shop/:page">
             <Shop />
           </Route>
 
