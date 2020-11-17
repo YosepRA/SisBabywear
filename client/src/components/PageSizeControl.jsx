@@ -10,7 +10,7 @@ export class PageSizeControl extends Component {
     };
   }
 
-  handleChange = ({ target: { value } }) => this.setState({ pageSize: value });
+  handleChange = ({ target: { value } }) => this.props.handleChange(value);
 
   createOptions() {
     return this.pageSizes.map(pageSize => (
@@ -32,7 +32,7 @@ export class PageSizeControl extends Component {
           id="pageSize"
           className={this.props.inputClassName || ''}
           onChange={this.handleChange}
-          value={this.state.pageSIze}
+          value={this.props.selected}
         >
           {this.createOptions()}
         </Input>

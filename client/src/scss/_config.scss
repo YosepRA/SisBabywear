@@ -1,7 +1,9 @@
 $main-color: #ddbea9;
 $main-black: #222;
+$main-red: #dc3545;
 $light-grey: rgba($main-black, 0.5);
 $medium-grey: rgba($main-black, 0.7);
+$animation-speed: 400ms;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Quicksand:wght@300&display=swap');
 
@@ -52,6 +54,22 @@ $medium-grey: rgba($main-black, 0.7);
 
   &:not(:disabled):not(.disabled):active {
     background-color: darken($main-color, 10);
+    color: white;
+  }
+
+  &:focus {
+    background-color: darken($main-color, 5);
+    color: white;
+  }
+}
+
+@mixin buttonOutlineDark {
+  border-radius: 0;
+  border-color: $main-black;
+  color: $main-black;
+
+  &:hover {
+    background-color: $main-black;
     color: white;
   }
 }

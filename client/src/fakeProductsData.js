@@ -36,7 +36,7 @@ const { randomNum } = require('./helpers');
 faker.seed(100);
 
 const sizes = ['S', 'M', 'L', 'XL'];
-const products = generateProducts(10);
+const products = generateProducts(3);
 
 function createVariations() {
   let variations = [];

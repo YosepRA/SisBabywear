@@ -22,12 +22,9 @@ export class SortControl extends Component {
         label: 'Z - A',
       },
     ];
-    this.state = {
-      sortKey: '-postedDate',
-    };
   }
 
-  handleChange = ({ target: { value } }) => this.setState({ sortKey: value });
+  handleChange = ({ target: { value } }) => this.props.handleChange(value);
 
   createOptions() {
     return this.sortKeys.map(({ key, label }) => (
@@ -49,7 +46,7 @@ export class SortControl extends Component {
           id="sortKey"
           className={this.props.inputClassName || ''}
           onChange={this.handleChange}
-          value={this.state.sortKey}
+          value={this.props.selected}
         >
           {this.createOptions()}
         </Input>

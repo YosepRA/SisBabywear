@@ -1,0 +1,72 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  @include flexCenter();
+  flex-direction: column;
+  width: 100%;
+  min-height: 45vh;
+  background-color: white;
+  padding: 0 1rem 0;
+  transition: transform $animation-speed ease-out;
+  transform: translateY(-100%);
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 8%;
+    font-size: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__preface {
+    margin: 0 auto 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    &__search-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: white;
+      border-color: rgb(206, 212, 218);
+      border-radius: 0;
+      color: $main-black;
+    }
+  }
+
+  &.show {
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================================================================== */
+
+// Breakpoints.
+
+@include breakpoint-up(sm) {
+  .search-modal {
+    &__title {
+      margin-bottom: 0.8rem;
+    }
+
+    &__preface {
+      margin-bottom: 1.5rem;
+    }
+
+    &__form {
+      width: 80%;
+    }
+  }
+}
